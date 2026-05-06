@@ -1,0 +1,11 @@
+{
+  "id": "obsidian-trash-manager",
+  "name": "Trash Manager",
+  "version": "1.0.0",
+  "minAppVersion": "1.0.0",
+  "description": "View, restore, and manage files in Obsidian's internal .trash folder. Supports single/multi-select restore, folder restore, and empty trash.",
+  "author": "Trash Manager Plugin",
+  "authorUrl": "",
+  "fundingUrl": "",
+  "isDesktopOnly": false
+}
