@@ -1,0 +1,496 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Trash Manager Plugin — styles.css
+   Mobile-first design tuned for Obsidian Android
+   ═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Root / View ──────────────────────────────────────────────────────── */
+
+.tm-root {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  background: var(--background-primary);
+  font-family: var(--font-interface);
+}
+
+/* ── Header ───────────────────────────────────────────────────────────── */
+
+.tm-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px 10px;
+  border-bottom: 1px solid var(--background-modifier-border);
+  background: var(--background-primary);
+  flex-shrink: 0;
+}
+
+.tm-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--text-normal);
+  letter-spacing: 0.01em;
+}
+
+.tm-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  background: var(--background-modifier-error);
+  border-radius: 8px;
+  color: var(--text-on-accent);
+  flex-shrink: 0;
+}
+
+.tm-title-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Search ───────────────────────────────────────────────────────────── */
+
+.tm-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px 8px;
+  flex-shrink: 0;
+}
+
+.tm-search-icon {
+  display: flex;
+  align-items: center;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.tm-search-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.tm-search-input {
+  flex: 1;
+  background: var(--background-secondary);
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  color: var(--text-normal);
+  outline: none;
+  transition: border-color 0.15s ease;
+  min-height: 40px; /* Touch target */
+}
+
+.tm-search-input:focus {
+  border-color: var(--interactive-accent);
+  background: var(--background-primary);
+}
+
+/* ── Toolbar ──────────────────────────────────────────────────────────── */
+
+.tm-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 16px 8px;
+  gap: 8px;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.tm-toolbar-left,
+.tm-toolbar-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────── */
+
+.tm-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-family: var(--font-interface);
+  font-weight: 500;
+  transition: background 0.12s ease, transform 0.08s ease, opacity 0.12s;
+  white-space: nowrap;
+  line-height: 1;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  user-select: none;
+}
+
+.tm-btn:active {
+  transform: scale(0.96);
+}
+
+.tm-btn-sm {
+  font-size: 0.8rem;
+  padding: 7px 12px;
+  min-height: 34px;
+}
+
+.tm-btn-primary {
+  background: var(--interactive-accent);
+  color: var(--text-on-accent);
+}
+
+.tm-btn-primary:hover {
+  background: var(--interactive-accent-hover);
+}
+
+.tm-btn-danger {
+  background: var(--background-modifier-error);
+  color: var(--text-error);
+}
+
+.tm-btn-danger:hover {
+  background: var(--background-modifier-error-hover, #fca5a5);
+  color: var(--text-on-accent);
+}
+
+.tm-btn-ghost {
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  border: 1px solid var(--background-modifier-border);
+}
+
+.tm-btn-ghost:hover {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.tm-btn-icon {
+  display: flex;
+  align-items: center;
+}
+
+.tm-btn-icon svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tm-icon-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  background: transparent;
+  border: none;
+  border-radius: 7px;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: background 0.12s ease, color 0.12s ease;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.tm-icon-btn:hover,
+.tm-icon-btn:active {
+  background: var(--background-modifier-hover);
+  color: var(--text-normal);
+}
+
+.tm-icon-btn svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* ── Status Bar ───────────────────────────────────────────────────────── */
+
+.tm-status {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  padding: 4px 16px 2px;
+  flex-shrink: 0;
+  min-height: 20px;
+}
+
+/* ── List ─────────────────────────────────────────────────────────────── */
+
+.tm-list {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 6px 0 24px;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Items ────────────────────────────────────────────────────────────── */
+
+.tm-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  padding-left: calc(16px + var(--depth, 0) * 20px);
+  cursor: pointer;
+  transition: background 0.1s ease;
+  min-height: 52px; /* Good touch target on Android */
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+  border-bottom: 1px solid var(--background-modifier-border-hover, transparent);
+}
+
+.tm-item:hover,
+.tm-item:active {
+  background: var(--background-modifier-hover);
+}
+
+.tm-item.tm-selected {
+  background: color-mix(in srgb, var(--interactive-accent) 12%, transparent);
+  border-left: 3px solid var(--interactive-accent);
+  padding-left: calc(13px + var(--depth, 0) * 20px);
+}
+
+/* ── Checkbox ─────────────────────────────────────────────────────────── */
+
+.tm-checkbox-wrap {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.tm-checkbox {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  accent-color: var(--interactive-accent);
+  border-radius: 4px;
+  flex-shrink: 0;
+}
+
+/* ── Item Icon ────────────────────────────────────────────────────────── */
+
+.tm-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background: var(--background-secondary);
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.tm-item-icon svg {
+  width: 15px;
+  height: 15px;
+}
+
+.tm-item-icon.tm-folder-icon {
+  background: color-mix(in srgb, var(--interactive-accent) 15%, transparent);
+  color: var(--interactive-accent);
+}
+
+/* ── Item Info ────────────────────────────────────────────────────────── */
+
+.tm-item-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tm-item-name {
+  font-size: 0.9rem;
+  color: var(--text-normal);
+  font-weight: 400;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  line-height: 1.35;
+}
+
+.tm-item-size {
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  line-height: 1.2;
+}
+
+/* ── Item Actions (per-row) ───────────────────────────────────────────── */
+
+.tm-item-actions {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.tm-item:hover .tm-item-actions,
+.tm-item:active .tm-item-actions,
+.tm-item.tm-selected .tm-item-actions {
+  opacity: 1;
+}
+
+/* Always show on mobile (no hover state) */
+@media (hover: none) {
+  .tm-item-actions {
+    opacity: 1;
+  }
+}
+
+.tm-restore-btn {
+  color: var(--interactive-accent);
+}
+
+.tm-restore-btn:hover {
+  background: color-mix(in srgb, var(--interactive-accent) 15%, transparent);
+  color: var(--interactive-accent);
+}
+
+/* ── Folder Children ──────────────────────────────────────────────────── */
+
+.tm-folder-children {
+  /* Children render at increased depth via --depth variable */
+}
+
+/* ── Empty State ──────────────────────────────────────────────────────── */
+
+.tm-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.tm-empty-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--background-secondary);
+  margin-bottom: 16px;
+  color: var(--text-faint);
+}
+
+.tm-empty-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.tm-empty p {
+  margin: 0 0 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.tm-empty-sub {
+  font-size: 0.8rem !important;
+  font-weight: 400 !important;
+  color: var(--text-faint) !important;
+}
+
+/* ── Confirm Modal ────────────────────────────────────────────────────── */
+
+.tm-confirm-modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 4px 4px;
+  text-align: center;
+}
+
+.tm-confirm-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: var(--background-modifier-error);
+  color: var(--text-error);
+  margin-bottom: 4px;
+}
+
+.tm-confirm-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.tm-confirm-message {
+  font-size: 0.92rem;
+  color: var(--text-normal);
+  line-height: 1.5;
+  margin: 0;
+  max-width: 280px;
+}
+
+.tm-confirm-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.tm-confirm-buttons .tm-btn {
+  flex: 1;
+  max-width: 140px;
+  justify-content: center;
+  padding: 11px 16px;
+  font-size: 0.9rem;
+  min-height: 44px;
+}
+
+/* ── Scrollbar (desktop) ──────────────────────────────────────────────── */
+
+.tm-list::-webkit-scrollbar {
+  width: 4px;
+}
+
+.tm-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.tm-list::-webkit-scrollbar-thumb {
+  background: var(--background-modifier-border);
+  border-radius: 4px;
+}
+
+/* ── Responsive: narrow mobile ────────────────────────────────────────── */
+
+@media (max-width: 360px) {
+  .tm-toolbar {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  .tm-toolbar-left,
+  .tm-toolbar-right {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .tm-btn-sm {
+    flex: 1;
+    justify-content: center;
+  }
+
+  .tm-item {
+    padding: 10px 12px;
+    padding-left: calc(12px + var(--depth, 0) * 16px);
+  }
+}
